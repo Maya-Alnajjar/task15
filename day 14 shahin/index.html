@@ -10,7 +10,6 @@
     />
     <script src="
     https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.js"></script>
-
     <script src="https://js.arcgis.com/4.29/"></script>
 
     <link rel="stylesheet" href="style.css" />
@@ -24,20 +23,22 @@
     <div id="mapContainer">
       <div id="viewDiv"></div>
       <div id="controls" class="card">
-        <select id="fieldSelect">
-          <option value="">Select a field</option>
-        </select>
-        <br />
-        <input
-          type="text"
-          id="filterInput"
-          placeholder="Enter the value to filter"
-        />
-        <!-- <datalist></datalist> -->
-      </div>
+        <form id="form1">
+          <select id="fieldSelect">
+            <option value="" disabled selected hidden>Select a field</option>
+          </select>
+          <br />
+          <input
+            autocomplete="off"
+            type="text"
+            id="filterInput"
+            placeholder="Enter the value to filter"
+            list="myDataList"
+          />
+          <datalist id="myDataList"> </datalist>
 
-      <div id="controls3" class="card">
-        <div id="someChart" style="width: 400px; height: 200px"></div>
+          <button type="submit">Search</button>
+        </form>
       </div>
 
       <div id="controls2" class="card">
@@ -47,7 +48,6 @@
         </table>
       </div>
     </div>
-
     <div id="footer">
       <p>Developed with ArcGIS API for JavaScript</p>
     </div>
